@@ -1,13 +1,13 @@
-module.exports = function main(inputs) {
+module.exports = function main({ distance, parkTime }) {
   // write your code here...
   let result = 0;
-  if (inputs.distance > 0 && inputs.distance <= 2) {
+  if (distance > 0 && distance <= 2) {
     result = 6;
-  } else if (inputs.distance > 2 && inputs.distance <= 8) {
-    result = 6 + (inputs.distance - 2) * 0.8;
+  } else if (distance > 2 && distance <= 8) {
+    result = 6 + (distance - 2) * 0.8;
   } else {
-    result = 6 + 4.8 + (inputs.distance - 8) * 1.2;
+    result = 6 + 4.8 + (distance - 8) * 1.2;
   }
-  result += inputs.parkTime * 0.25;
+  result += parkTime * 0.25;
   return Math.round(result);
 };
